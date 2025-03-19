@@ -4,7 +4,7 @@ const {User}=require('./model/User');
 const mongoose = require('mongoose');
 const cors=require('cors');
 const morgan=require('morgan');
-const bcrypt=require('bcrypt');
+const bcrypt=require('bcryptjs');
 const jwt=require('jsonwebtoken');
 const {Product} = require('./model/product');
 const {Cart} = require('./model/cart');
@@ -351,9 +351,11 @@ app.delete("/cart/product/delete", async (req, res) => {
     }
   });
       
+// moGbbYf9Ar0CX5HB
 
+let MONGODB_URL="mongodb+srv://nidhi77kulkarni:moGbbYf9Ar0CX5HB@cluster0.9pbze.mongodb.net/?retryWrites=true&w=majority"
 
-mongoose.connect('mongodb://127.0.0.1:27017/KleProject')
+mongoose.connect( MONGODB_URL)
 .then(()=>{
     console.log("DB is connected")
 }).catch((err)=>{
